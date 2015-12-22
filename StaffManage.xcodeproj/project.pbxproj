@@ -17,6 +17,7 @@
 		040573531C28F1F5006F66C1 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573521C28F1F5006F66C1 /* Human.m */; };
 		040573561C28F327006F66C1 /* ManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573551C28F327006F66C1 /* ManagerModel.m */; };
 		040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573581C28F49A006F66C1 /* EmployeeModel.m */; };
+		0405739A1C292F34006F66C1 /* Dao.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573991C292F34006F66C1 /* Dao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		040573551C28F327006F66C1 /* ManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerModel.m; sourceTree = "<group>"; };
 		040573571C28F49A006F66C1 /* EmployeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeModel.h; sourceTree = "<group>"; };
 		040573581C28F49A006F66C1 /* EmployeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeModel.m; sourceTree = "<group>"; };
+		040573981C292F34006F66C1 /* Dao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dao.h; sourceTree = "<group>"; };
+		040573991C292F34006F66C1 /* Dao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 		0405732B1C28E911006F66C1 /* StaffManage */ = {
 			isa = PBXGroup;
 			children = (
+				0405739B1C292F41006F66C1 /* DAO */,
 				040573431C28EAB5006F66C1 /* 管理子系统 */,
 				040573441C28EAC9006F66C1 /* 业务子系统 */,
 				0405732E1C28E911006F66C1 /* Supporting Files */,
@@ -187,6 +191,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		0405739B1C292F41006F66C1 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				040573981C292F34006F66C1 /* Dao.h */,
+				040573991C292F34006F66C1 /* Dao.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +257,7 @@
 				040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */,
 				040573411C28EA9F006F66C1 /* ServiceView.m in Sources */,
 				0405732D1C28E911006F66C1 /* main.m in Sources */,
+				0405739A1C292F34006F66C1 /* Dao.m in Sources */,
 				040573561C28F327006F66C1 /* ManagerModel.m in Sources */,
 				040573401C28EA9F006F66C1 /* ManagerView.m in Sources */,
 			);

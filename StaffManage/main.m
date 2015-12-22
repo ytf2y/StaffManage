@@ -7,14 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ManagerController.h"
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        ManagerController * mc = [[ManagerController alloc] init];
+        BOOL ret = [mc addManagerWithName:@"xxx" andPassword:@"xxx"];
+        if(ret)
+        {
+            printf("添加成功\n");
+        }
+        ret = [mc addManagerWithName:@"xxxx" andPassword:@"xxxx"];
+        if(ret)
+        {
+            printf("添加成功\n");
+        }
+        [mc listManagers];
+//        NSLog(@"%10@",@"xx");
         
     }
     return 0;

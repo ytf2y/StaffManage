@@ -10,4 +10,9 @@
 
 @implementation ManagerModel
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"%-5ld,%-10s,%-3s",self.Id,[self.name UTF8String],"***"];
+}
+
 @end
