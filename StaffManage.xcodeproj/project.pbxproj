@@ -10,6 +10,13 @@
 		0405732A1C28E911006F66C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040573291C28E911006F66C1 /* Foundation.framework */; };
 		0405732D1C28E911006F66C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405732C1C28E911006F66C1 /* main.m */; };
 		040573311C28E912006F66C1 /* StaffManage.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 040573301C28E912006F66C1 /* StaffManage.1 */; };
+		040573401C28EA9F006F66C1 /* ManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733A1C28EA9F006F66C1 /* ManagerView.m */; };
+		040573411C28EA9F006F66C1 /* ServiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733C1C28EA9F006F66C1 /* ServiceView.m */; };
+		040573421C28EA9F006F66C1 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733E1C28EA9F006F66C1 /* View.m */; };
+		040573501C28EEE5006F66C1 /* ManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405734F1C28EEE5006F66C1 /* ManagerController.m */; };
+		040573531C28F1F5006F66C1 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573521C28F1F5006F66C1 /* Human.m */; };
+		040573561C28F327006F66C1 /* ManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573551C28F327006F66C1 /* ManagerModel.m */; };
+		040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573581C28F49A006F66C1 /* EmployeeModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +38,20 @@
 		0405732C1C28E911006F66C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0405732F1C28E911006F66C1 /* StaffManage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaffManage-Prefix.pch"; sourceTree = "<group>"; };
 		040573301C28E912006F66C1 /* StaffManage.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = StaffManage.1; sourceTree = "<group>"; };
+		040573391C28EA9F006F66C1 /* ManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerView.h; sourceTree = "<group>"; };
+		0405733A1C28EA9F006F66C1 /* ManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerView.m; sourceTree = "<group>"; };
+		0405733B1C28EA9F006F66C1 /* ServiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceView.h; sourceTree = "<group>"; };
+		0405733C1C28EA9F006F66C1 /* ServiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceView.m; sourceTree = "<group>"; };
+		0405733D1C28EA9F006F66C1 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = View.h; path = StaffManage/View.h; sourceTree = "<group>"; };
+		0405733E1C28EA9F006F66C1 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = View.m; path = StaffManage/View.m; sourceTree = "<group>"; };
+		0405734E1C28EEE5006F66C1 /* ManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerController.h; sourceTree = "<group>"; };
+		0405734F1C28EEE5006F66C1 /* ManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerController.m; sourceTree = "<group>"; };
+		040573511C28F1F5006F66C1 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Human.h; path = StaffManage/Human.h; sourceTree = "<group>"; };
+		040573521C28F1F5006F66C1 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Human.m; path = StaffManage/Human.m; sourceTree = "<group>"; };
+		040573541C28F327006F66C1 /* ManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerModel.h; sourceTree = "<group>"; };
+		040573551C28F327006F66C1 /* ManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerModel.m; sourceTree = "<group>"; };
+		040573571C28F49A006F66C1 /* EmployeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeModel.h; sourceTree = "<group>"; };
+		040573581C28F49A006F66C1 /* EmployeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +69,10 @@
 		0405731D1C28E911006F66C1 = {
 			isa = PBXGroup;
 			children = (
+				0405733D1C28EA9F006F66C1 /* View.h */,
+				0405733E1C28EA9F006F66C1 /* View.m */,
+				040573511C28F1F5006F66C1 /* Human.h */,
+				040573521C28F1F5006F66C1 /* Human.m */,
 				0405732B1C28E911006F66C1 /* StaffManage */,
 				040573281C28E911006F66C1 /* Frameworks */,
 				040573271C28E911006F66C1 /* Products */,
@@ -73,8 +98,8 @@
 		0405732B1C28E911006F66C1 /* StaffManage */ = {
 			isa = PBXGroup;
 			children = (
-				0405732C1C28E911006F66C1 /* main.m */,
-				040573301C28E912006F66C1 /* StaffManage.1 */,
+				040573431C28EAB5006F66C1 /* 管理子系统 */,
+				040573441C28EAC9006F66C1 /* 业务子系统 */,
 				0405732E1C28E911006F66C1 /* Supporting Files */,
 			);
 			path = StaffManage;
@@ -83,9 +108,83 @@
 		0405732E1C28E911006F66C1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0405732C1C28E911006F66C1 /* main.m */,
+				040573301C28E912006F66C1 /* StaffManage.1 */,
 				0405732F1C28E911006F66C1 /* StaffManage-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		040573431C28EAB5006F66C1 /* 管理子系统 */ = {
+			isa = PBXGroup;
+			children = (
+				040573451C28EAD2006F66C1 /* Model */,
+				040573461C28EAED006F66C1 /* View */,
+				040573471C28EAF4006F66C1 /* Controller */,
+			);
+			name = "管理子系统";
+			sourceTree = "<group>";
+		};
+		040573441C28EAC9006F66C1 /* 业务子系统 */ = {
+			isa = PBXGroup;
+			children = (
+				0405734A1C28EB37006F66C1 /* Model */,
+				040573491C28EB32006F66C1 /* View */,
+				040573481C28EB20006F66C1 /* Controller */,
+			);
+			name = "业务子系统";
+			sourceTree = "<group>";
+		};
+		040573451C28EAD2006F66C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				040573541C28F327006F66C1 /* ManagerModel.h */,
+				040573551C28F327006F66C1 /* ManagerModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		040573461C28EAED006F66C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				040573391C28EA9F006F66C1 /* ManagerView.h */,
+				0405733A1C28EA9F006F66C1 /* ManagerView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		040573471C28EAF4006F66C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0405734E1C28EEE5006F66C1 /* ManagerController.h */,
+				0405734F1C28EEE5006F66C1 /* ManagerController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		040573481C28EB20006F66C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		040573491C28EB32006F66C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0405733B1C28EA9F006F66C1 /* ServiceView.h */,
+				0405733C1C28EA9F006F66C1 /* ServiceView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0405734A1C28EB37006F66C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				040573571C28F49A006F66C1 /* EmployeeModel.h */,
+				040573581C28F49A006F66C1 /* EmployeeModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040573531C28F1F5006F66C1 /* Human.m in Sources */,
+				040573501C28EEE5006F66C1 /* ManagerController.m in Sources */,
+				040573421C28EA9F006F66C1 /* View.m in Sources */,
+				040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */,
+				040573411C28EA9F006F66C1 /* ServiceView.m in Sources */,
 				0405732D1C28E911006F66C1 /* main.m in Sources */,
+				040573561C28F327006F66C1 /* ManagerModel.m in Sources */,
+				040573401C28EA9F006F66C1 /* ManagerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
