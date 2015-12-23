@@ -9,6 +9,9 @@
 #import "Human.h"
 
 @interface EmployeeModel : Human
+
+//部门ID
+@property (nonatomic,assign) NSUInteger deptId;
 //性别
 @property (nonatomic,assign) NSUInteger gender;
 //年龄

@@ -14,8 +14,11 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         ManagerController * mc = [[ManagerController alloc] init];
+        
+//        [mc listManagers];
         [mc viewDidLoad];
-//        BOOL ret = [mc addManagerWithName:@"xxx" andPassword:@"xxx"];
+//        [mc listManagers];
+        
 //        if(ret)
 //        {
 //            printf("添加成功\n");
@@ -28,6 +31,12 @@ int main(int argc, const char * argv[])
 //        [mc listManagers];
 //        NSLog(@"%10@",@"xx");
         
+//        char name[100] = {};
+//        scanf("%s",name);
+//        if([[NSString stringWithUTF8String:name] isEqualToString:@"xxx"])
+//        {
+//            NSLog(@"xxx");
+//        }
     }
     return 0;
 }

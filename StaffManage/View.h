@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class ManagerView,ServiceView;
+
 @interface View : NSObject
 
 -(void)login;
 -(void)menu;
-+(instancetype)viewOfManager;
-+(instancetype)viewOfService;
++(ManagerView*)viewOfManager;
++(ServiceView*)viewOfService;
 
 @end
 

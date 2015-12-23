@@ -13,7 +13,7 @@
 //密码
 @property (nonatomic,copy) NSString * password;
 //权限
-//@property (nonatomic,assign) NSUInteger perm;
+@property (nonatomic,assign) NSUInteger perm;
 
 @end
 

@@ -17,7 +17,7 @@
 {
     
 }
-+(instancetype)viewOfManager
++(ManagerView*)viewOfManager
 {
     static ManagerView * mv = nil;
     if(mv == nil)
@@ -26,7 +26,7 @@
     }
     return mv;
 }
-+(instancetype)viewOfService
++(ServiceView*)viewOfService
 {
     static ServiceView * sv = nil;
     if(sv == nil)

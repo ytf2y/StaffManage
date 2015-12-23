@@ -25,7 +25,8 @@
     if(self = [super init])
     {
         _mArray = [[NSMutableArray alloc] init];
-        _mv = [[ManagerView alloc] init];
+        _mv = [View viewOfManager];
+        _mv.mc = self;
     }
     return self;
 }
@@ -53,27 +54,30 @@
 /*
     添加管理员,通过指定的name和id
  */
--(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password
+-(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password andPerm:(NSUInteger)perm
 {
     ManagerModel * mm = [[ManagerModel alloc] init];
     NSDictionary * dict = [[Dao defaultDao] readDataFromInforFile];
+    NSMutableDictionary * mDict = [NSMutableDictionary dictionaryWithDictionary:dict];
     if(dict != nil)
     {
         mm.Id = [dict[@"manager_id"]integerValue] + 1;
+        mDict[@"manager_id"] =@([dict[@"manager_id"]integerValue] + 1);
     }
     else
     {
         mm.Id = 100;
-        NSMutableDictionary * mDict = [NSMutableDictionary dictionaryWithDictionary:dict];
         mDict[@"manager_id"] = @100;
-        BOOL ret = [[Dao defaultDao] writeToInforFileWithDict:mDict];
-        if(ret == NO)
-        {
-            NSLog(@"写入数据到infor文件失败");
-        }
+    }
+    //写入数据到文件中.
+    BOOL ret = [[Dao defaultDao] writeToInforFileWithDict:mDict];
+    if(ret == NO)
+    {
+        NSLog(@"写入数据到infor文件失败");
     }
     mm.name = name;
     mm.password = password;
+    mm.perm = perm;
     
     [self.mArray addObject:mm];
 //    printf("%s",[[mm description] UTF8String]);

@@ -46,6 +46,14 @@
     }
     return YES;
 }
+-(NSArray *)readData
+{
+    return nil;
+}
+-(BOOL)writeData:(NSArray *)array
+{
+    return NO;
+}
 +(instancetype)defaultDao
 {
     static Dao * dao = nil ;

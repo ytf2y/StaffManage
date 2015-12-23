@@ -25,7 +25,7 @@
 /*
     添加管理员,通过指定的name和id
  */
--(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password;
+-(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password andPerm:(NSUInteger)perm;
 /*
     删除管理员,通过指定的管理员id
  */
