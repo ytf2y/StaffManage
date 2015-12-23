@@ -7,26 +7,52 @@
 //
 
 #import "ManagerController.h"
+#import "ManagerView.h"
 #import "ManagerModel.h"
 #import "Dao.h"
 @interface ManagerController ()
-//私有化的属性
+//私有化的属性,用来存储多个管理员对象
 @property (nonatomic,strong) NSMutableArray * mArray;
 
 @end
 
 @implementation ManagerController
 /*
-    添加管理员,通过指定的name和id
+ 重写无参构造方法
  */
 -(instancetype)init
 {
     if(self = [super init])
     {
         _mArray = [[NSMutableArray alloc] init];
+        _mv = [[ManagerView alloc] init];
     }
     return self;
 }
+/*
+ 调用此方法 开始执行登陆.
+ */
+-(void)viewDidLoad
+{
+    [self.mv login];
+}
+/*
+    验证用户名和密码是否正确.
+ */
+-(BOOL)checkName:(NSString *)name AndPassword:(NSString *)password
+{
+    for(ManagerModel * mm in _mArray)
+    {
+        if([name isEqualToString:mm.name] && [password isEqualToString:mm.password])
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+/*
+    添加管理员,通过指定的name和id
+ */
 -(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password
 {
     ManagerModel * mm = [[ManagerModel alloc] init];

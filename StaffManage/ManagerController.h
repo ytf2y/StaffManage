@@ -8,7 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@class ManagerView;
+
 @interface ManagerController : NSObject
+
+@property (nonatomic,strong) ManagerView * mv;
+
+/*
+    调用此方法 加载界面元素.
+ */
+-(void)viewDidLoad;
+/*
+    验证用户名和密码是否正确.
+ */
+-(BOOL)checkName:(NSString *)name AndPassword:(NSString*)password;
 /*
     添加管理员,通过指定的name和id
  */

@@ -14,17 +14,18 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         ManagerController * mc = [[ManagerController alloc] init];
-        BOOL ret = [mc addManagerWithName:@"xxx" andPassword:@"xxx"];
-        if(ret)
-        {
-            printf("添加成功\n");
-        }
-        ret = [mc addManagerWithName:@"xxxx" andPassword:@"xxxx"];
-        if(ret)
-        {
-            printf("添加成功\n");
-        }
-        [mc listManagers];
+        [mc viewDidLoad];
+//        BOOL ret = [mc addManagerWithName:@"xxx" andPassword:@"xxx"];
+//        if(ret)
+//        {
+//            printf("添加成功\n");
+//        }
+//        ret = [mc addManagerWithName:@"xxxx" andPassword:@"xxxx"];
+//        if(ret)
+//        {
+//            printf("添加成功\n");
+//        }
+//        [mc listManagers];
 //        NSLog(@"%10@",@"xx");
         
     }

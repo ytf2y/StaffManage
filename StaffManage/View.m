@@ -9,7 +9,14 @@
 #import "ManagerView.h"
 #import "ServiceView.h"
 @implementation View
-
+-(void)menu
+{
+    
+}
+-(void)login
+{
+    
+}
 +(instancetype)viewOfManager
 {
     static ManagerView * mv = nil;

@@ -10,6 +10,7 @@
 
 @interface View : NSObject
 
+-(void)login;
 -(void)menu;
 +(instancetype)viewOfManager;
 +(instancetype)viewOfService;
