@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class ManagerDao;
+
 @interface Dao : NSObject
 /*
- 创建并返回Dao单例对象
+    创建并返回Dao单例对象
  */
 +(instancetype)defaultDao;
+/*
+    创建并返回ManagerDao单例对象
+ */
++(ManagerDao *)daoOfManager;
+
 /*
     读取项目信息文件(plist文件),返回存有数据的字典对象
  */

@@ -8,59 +8,23 @@
 
 #import "ManagerView.h"
 #import "ManagerController.h"
+#import "EmployeeView.h"
+#import "DepartmentView.h"
+
 @implementation ManagerView
-/*
-    超级管理员登陆时,调用此方法
- */
--(void)login
-{
-    char name[100] = {};
-    char password[100] = {};
-    int i;
-    printf("欢迎使用员工管理信息系统\n");
-    printf("       请登陆\n");
-    for(i = 1;i <= 3;i++)
-    {
-        printf("用户名:");
-        scanf("%s",name);
-        printf("密码:");
-        scanf("%s",password);
-        if([_mc checkName:[NSString stringWithUTF8String:name] AndPassword:[NSString stringWithUTF8String:password]] == YES)
-        {
-            printf("登陆成功!\n");
-            break;
-        }
-        else
-        {
-            if(i < 3)
-            {
-                printf("用户名/密码错误!剩余%d次登陆机会\n",3-i);
-            }
-            else
-            {
-                printf("用户名/密码错误!登陆机会已用完\n");
-            }
-        }
-    }
-    if(i < 4)
-    {
-        while(1)
-        {
-            [self menu];
-        }
-    }
-}
+
 /*
     超级管理员登陆成功后,调用此方法,显示操作目录.
  */
 -(void)menu
 {
-    printf("----管理员管理页面----\n");
-    printf("[1].增加管理员\n");
-    printf("[2].删除管理员\n");
-    printf("[3].列出管理员\n");
-    printf("[4].运营子系统\n");
-    printf("[0].退出系统\n");
+    printf("*******管理员管理页面********\n");
+    printf("*      [1].增加管理员      *\n");
+    printf("*      [2].删除管理员      *\n");
+    printf("*      [3].列出管理员      *\n");
+    printf("*      [4].运营子系统      *\n");
+    printf("*      [0].退出系统        *\n");
+    printf("***************************\n");
     printf("请选择:");
     fflush(stdout);
     char xuanze[10] = {};
@@ -71,7 +35,7 @@
         case 2:[self del];break;
         case 3:[self list];break;
         case 4:break;
-        case 0:exit(0);break;
+        case 0:[self exit];break;
     }
 }
 /*
@@ -100,7 +64,7 @@
 //            break;
 //        }
 //    }
-    printf("请选择管理员类型[1],超级管理员;[0],运营管理员");
+    printf("请选择管理员类型[1],超级管理员;[0],运营管理员\n");
     scanf("%s",type);
     BOOL ret = [_mc addManagerWithName:[NSString stringWithUTF8String:name] andPassword:[NSString stringWithUTF8String:password1] andPerm:atol(type)];
     if(ret == YES)
@@ -127,6 +91,20 @@
  */
 -(void)list
 {
+//    printf("*********管理员列表*********\n");
+//    printf("|-------------------------|\n");
+    printf("|--------管理员列表---------|\n");
+    printf("|ID   |USERNAME  |PASSWORD|\n");
+    printf("|-------------------------|\n");
     [_mc listManagers];
+    printf("|-------------------------|\n");
+}
+/*
+    退出系统时,调用此方法执行用户数据的持久化操作
+ */
+-(void)exit
+{
+    [_mc writeData];
+    exit(0);
 }
 @end

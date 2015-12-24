@@ -11,13 +11,20 @@
 		0405732D1C28E911006F66C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405732C1C28E911006F66C1 /* main.m */; };
 		040573311C28E912006F66C1 /* StaffManage.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 040573301C28E912006F66C1 /* StaffManage.1 */; };
 		040573401C28EA9F006F66C1 /* ManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733A1C28EA9F006F66C1 /* ManagerView.m */; };
-		040573411C28EA9F006F66C1 /* ServiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733C1C28EA9F006F66C1 /* ServiceView.m */; };
 		040573421C28EA9F006F66C1 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405733E1C28EA9F006F66C1 /* View.m */; };
 		040573501C28EEE5006F66C1 /* ManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405734F1C28EEE5006F66C1 /* ManagerController.m */; };
 		040573531C28F1F5006F66C1 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573521C28F1F5006F66C1 /* Human.m */; };
 		040573561C28F327006F66C1 /* ManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573551C28F327006F66C1 /* ManagerModel.m */; };
 		040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573581C28F49A006F66C1 /* EmployeeModel.m */; };
 		0405739A1C292F34006F66C1 /* Dao.m in Sources */ = {isa = PBXBuildFile; fileRef = 040573991C292F34006F66C1 /* Dao.m */; };
+		0418FC7C1C2B85880073F22B /* EmployeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC7B1C2B85880073F22B /* EmployeeView.m */; };
+		0418FC851C2B87720073F22B /* DepartmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC841C2B87720073F22B /* DepartmentView.m */; };
+		0418FC881C2B87D50073F22B /* DepartmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC871C2B87D50073F22B /* DepartmentModel.m */; };
+		0418FC8B1C2B880F0073F22B /* DepartmentDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC8A1C2B880F0073F22B /* DepartmentDao.m */; };
+		0418FC8E1C2B88590073F22B /* DepartmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC8D1C2B88590073F22B /* DepartmentController.m */; };
+		0418FC911C2B88C30073F22B /* EmployeeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC901C2B88C30073F22B /* EmployeeDao.m */; };
+		0418FC941C2B88F70073F22B /* EmployeeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC931C2B88F70073F22B /* EmployeeController.m */; };
+		0418FC971C2B9E290073F22B /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418FC961C2B9E290073F22B /* Login.m */; };
 		049557451C2A878200EA83A6 /* ManagerDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 049557441C2A878200EA83A6 /* ManagerDao.m */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +49,6 @@
 		040573301C28E912006F66C1 /* StaffManage.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = StaffManage.1; sourceTree = "<group>"; };
 		040573391C28EA9F006F66C1 /* ManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerView.h; sourceTree = "<group>"; };
 		0405733A1C28EA9F006F66C1 /* ManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerView.m; sourceTree = "<group>"; };
-		0405733B1C28EA9F006F66C1 /* ServiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceView.h; sourceTree = "<group>"; };
-		0405733C1C28EA9F006F66C1 /* ServiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceView.m; sourceTree = "<group>"; };
 		0405733D1C28EA9F006F66C1 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = View.h; path = StaffManage/View.h; sourceTree = "<group>"; };
 		0405733E1C28EA9F006F66C1 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = View.m; path = StaffManage/View.m; sourceTree = "<group>"; };
 		0405734E1C28EEE5006F66C1 /* ManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerController.h; sourceTree = "<group>"; };
@@ -56,6 +61,22 @@
 		040573581C28F49A006F66C1 /* EmployeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeModel.m; sourceTree = "<group>"; };
 		040573981C292F34006F66C1 /* Dao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dao.h; sourceTree = "<group>"; };
 		040573991C292F34006F66C1 /* Dao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dao.m; sourceTree = "<group>"; };
+		0418FC7A1C2B85880073F22B /* EmployeeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeView.h; sourceTree = "<group>"; };
+		0418FC7B1C2B85880073F22B /* EmployeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeView.m; sourceTree = "<group>"; };
+		0418FC831C2B87720073F22B /* DepartmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentView.h; sourceTree = "<group>"; };
+		0418FC841C2B87720073F22B /* DepartmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentView.m; sourceTree = "<group>"; };
+		0418FC861C2B87D50073F22B /* DepartmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentModel.h; sourceTree = "<group>"; };
+		0418FC871C2B87D50073F22B /* DepartmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentModel.m; sourceTree = "<group>"; };
+		0418FC891C2B880F0073F22B /* DepartmentDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentDao.h; sourceTree = "<group>"; };
+		0418FC8A1C2B880F0073F22B /* DepartmentDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentDao.m; sourceTree = "<group>"; };
+		0418FC8C1C2B88590073F22B /* DepartmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentController.h; sourceTree = "<group>"; };
+		0418FC8D1C2B88590073F22B /* DepartmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentController.m; sourceTree = "<group>"; };
+		0418FC8F1C2B88C30073F22B /* EmployeeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeDao.h; sourceTree = "<group>"; };
+		0418FC901C2B88C30073F22B /* EmployeeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeDao.m; sourceTree = "<group>"; };
+		0418FC921C2B88F70073F22B /* EmployeeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeController.h; sourceTree = "<group>"; };
+		0418FC931C2B88F70073F22B /* EmployeeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeController.m; sourceTree = "<group>"; };
+		0418FC951C2B9E290073F22B /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		0418FC961C2B9E290073F22B /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		049557431C2A878200EA83A6 /* ManagerDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerDao.h; sourceTree = "<group>"; };
 		049557441C2A878200EA83A6 /* ManagerDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerDao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +125,7 @@
 		0405732B1C28E911006F66C1 /* StaffManage */ = {
 			isa = PBXGroup;
 			children = (
+				0418FC981C2B9E300073F22B /* Login */,
 				0405739B1C292F41006F66C1 /* DAO */,
 				040573431C28EAB5006F66C1 /* 管理子系统 */,
 				040573441C28EAC9006F66C1 /* 业务子系统 */,
@@ -136,10 +158,8 @@
 		040573441C28EAC9006F66C1 /* 业务子系统 */ = {
 			isa = PBXGroup;
 			children = (
-				049557421C2A876D00EA83A6 /* DAO */,
-				0405734A1C28EB37006F66C1 /* Model */,
-				040573491C28EB32006F66C1 /* View */,
-				040573481C28EB20006F66C1 /* Controller */,
+				0418FC7D1C2B85A80073F22B /* 员工管理 */,
+				0418FC7E1C2B85DC0073F22B /* 部门管理 */,
 			);
 			name = "业务子系统";
 			sourceTree = "<group>";
@@ -174,6 +194,8 @@
 		040573481C28EB20006F66C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0418FC921C2B88F70073F22B /* EmployeeController.h */,
+				0418FC931C2B88F70073F22B /* EmployeeController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -181,8 +203,8 @@
 		040573491C28EB32006F66C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0405733B1C28EA9F006F66C1 /* ServiceView.h */,
-				0405733C1C28EA9F006F66C1 /* ServiceView.m */,
+				0418FC7A1C2B85880073F22B /* EmployeeView.h */,
+				0418FC7B1C2B85880073F22B /* EmployeeView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -205,6 +227,73 @@
 			name = DAO;
 			sourceTree = "<group>";
 		};
+		0418FC7D1C2B85A80073F22B /* 员工管理 */ = {
+			isa = PBXGroup;
+			children = (
+				049557421C2A876D00EA83A6 /* DAO */,
+				0405734A1C28EB37006F66C1 /* Model */,
+				040573491C28EB32006F66C1 /* View */,
+				040573481C28EB20006F66C1 /* Controller */,
+			);
+			name = "员工管理";
+			sourceTree = "<group>";
+		};
+		0418FC7E1C2B85DC0073F22B /* 部门管理 */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC7F1C2B85F90073F22B /* DAO */,
+				0418FC801C2B86020073F22B /* Model */,
+				0418FC811C2B860B0073F22B /* View */,
+				0418FC821C2B86110073F22B /* Controller */,
+			);
+			name = "部门管理";
+			sourceTree = "<group>";
+		};
+		0418FC7F1C2B85F90073F22B /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC891C2B880F0073F22B /* DepartmentDao.h */,
+				0418FC8A1C2B880F0073F22B /* DepartmentDao.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		0418FC801C2B86020073F22B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC861C2B87D50073F22B /* DepartmentModel.h */,
+				0418FC871C2B87D50073F22B /* DepartmentModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0418FC811C2B860B0073F22B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC831C2B87720073F22B /* DepartmentView.h */,
+				0418FC841C2B87720073F22B /* DepartmentView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0418FC821C2B86110073F22B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC8C1C2B88590073F22B /* DepartmentController.h */,
+				0418FC8D1C2B88590073F22B /* DepartmentController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0418FC981C2B9E300073F22B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0418FC951C2B9E290073F22B /* Login.h */,
+				0418FC961C2B9E290073F22B /* Login.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		049557411C2A875400EA83A6 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +306,8 @@
 		049557421C2A876D00EA83A6 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				0418FC8F1C2B88C30073F22B /* EmployeeDao.h */,
+				0418FC901C2B88C30073F22B /* EmployeeDao.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -275,12 +366,19 @@
 				040573531C28F1F5006F66C1 /* Human.m in Sources */,
 				040573501C28EEE5006F66C1 /* ManagerController.m in Sources */,
 				049557451C2A878200EA83A6 /* ManagerDao.m in Sources */,
+				0418FC941C2B88F70073F22B /* EmployeeController.m in Sources */,
 				040573421C28EA9F006F66C1 /* View.m in Sources */,
+				0418FC971C2B9E290073F22B /* Login.m in Sources */,
 				040573591C28F49A006F66C1 /* EmployeeModel.m in Sources */,
-				040573411C28EA9F006F66C1 /* ServiceView.m in Sources */,
+				0418FC8B1C2B880F0073F22B /* DepartmentDao.m in Sources */,
 				0405732D1C28E911006F66C1 /* main.m in Sources */,
+				0418FC911C2B88C30073F22B /* EmployeeDao.m in Sources */,
+				0418FC851C2B87720073F22B /* DepartmentView.m in Sources */,
 				0405739A1C292F34006F66C1 /* Dao.m in Sources */,
+				0418FC8E1C2B88590073F22B /* DepartmentController.m in Sources */,
 				040573561C28F327006F66C1 /* ManagerModel.m in Sources */,
+				0418FC881C2B87D50073F22B /* DepartmentModel.m in Sources */,
+				0418FC7C1C2B85880073F22B /* EmployeeView.m in Sources */,
 				040573401C28EA9F006F66C1 /* ManagerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

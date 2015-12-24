@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @class ManagerView;
+@class ManagerDao;
+@class Login;
 
 @interface ManagerController : NSObject
 
 @property (nonatomic,strong) ManagerView * mv;
+@property (nonatomic,strong) ManagerDao * dao;
+@property (nonatomic,strong) Login * login;
 
 /*
     调用此方法 加载界面元素.
@@ -22,6 +26,10 @@
     验证用户名和密码是否正确.
  */
 -(BOOL)checkName:(NSString *)name AndPassword:(NSString*)password;
+/*
+    验证是否是管理员
+ */
+-(BOOL)isManagerWithName:(NSString *)name;
 /*
     添加管理员,通过指定的name和id
  */
@@ -34,5 +42,8 @@
     列出所有管理员
  */
 -(void)listManagers;
-
+/*
+    存储对象数据到文件
+ */
+-(void)writeData;
 @end

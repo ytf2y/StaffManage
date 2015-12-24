@@ -14,7 +14,6 @@
 
 //ManagerController类的对象指针.
 @property (nonatomic,strong) ManagerController * mc;
-
 /*
     用户输入[1],调用此方法.
  */
@@ -27,6 +26,7 @@
     用户输入[3],调用此方法.
  */
 -(void)list;
+
 
 @end
 

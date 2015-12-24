@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Human : NSObject
+/*
+    类Human,继承自NSObject,遵从NSCoding协议
+ */
+@interface Human : NSObject<NSCoding>
+
 //区分每个人的 唯一的Id
 @property (nonatomic,assign) NSUInteger Id;
 //姓名

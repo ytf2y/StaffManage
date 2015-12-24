@@ -10,6 +10,9 @@
 #import "ManagerView.h"
 #import "ManagerModel.h"
 #import "Dao.h"
+#import "ManagerDao.h"
+#import "Login.h"
+
 @interface ManagerController ()
 //私有化的属性,用来存储多个管理员对象
 @property (nonatomic,strong) NSMutableArray * mArray;
@@ -18,15 +21,27 @@
 
 @implementation ManagerController
 /*
- 重写无参构造方法
+    重写无参构造方法
  */
 -(instancetype)init
 {
     if(self = [super init])
     {
-        _mArray = [[NSMutableArray alloc] init];
+        _dao = [Dao daoOfManager];
+        NSArray * array = [_dao readData];
+        if(array == nil)
+        {
+            _mArray = [[NSMutableArray alloc] init];
+        }
+        else
+        {
+            _mArray = [[NSMutableArray alloc] initWithArray:array];
+        }
         _mv = [View viewOfManager];
         _mv.mc = self;
+        _login = [Login defualtLogin];
+        _login.mc = self;
+        
     }
     return self;
 }
@@ -35,7 +50,7 @@
  */
 -(void)viewDidLoad
 {
-    [self.mv login];
+    [self.login login];
 }
 /*
     验证用户名和密码是否正确.
@@ -51,6 +66,21 @@
     }
     return NO;
 }
+/*
+ 验证是否是管理员
+ */
+-(BOOL)isManagerWithName:(NSString *)name
+{
+    for(NSUInteger i = 0;i < _mArray.count;i++)
+    {
+        if([name isEqualToString:[_mArray[i] name]] == YES)
+        {
+            return [_mArray[i] perm]?YES:NO;
+        }
+    }
+    return NO;
+}
+
 /*
     添加管理员,通过指定的name和id
  */
@@ -104,12 +134,19 @@
 -(void)listManagers
 {
 //    printf("%ld\n",_mArray.count);
-    printf("-------管理员列表-------\n");
+    
+    
     for(ManagerModel * mm in _mArray)
     {
-        
-        printf("%s\n",[[mm description] UTF8String]);
+        printf("|%s|\n",[[mm description] UTF8String]);
     }
+   
 }
-
+/*
+ 存储对象数据到文件
+ */
+-(void)writeData
+{
+    [_dao writeData:_mArray];
+}
 @end

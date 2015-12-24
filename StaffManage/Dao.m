@@ -7,7 +7,7 @@
 //
 
 #import "Dao.h"
-
+#import "ManagerDao.h"
 @implementation Dao
 /*
     读取项目信息文件(plist文件),返回存有数据的字典对象
@@ -62,5 +62,14 @@
         dao = [[Dao alloc] init];
     }
     return dao;
+}
++(ManagerDao*)daoOfManager
+{
+    static ManagerDao * mDao = nil;
+    if(mDao == nil)
+    {
+        mDao = [[ManagerDao alloc] init];
+    }
+    return mDao;
 }
 @end

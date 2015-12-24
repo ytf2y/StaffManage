@@ -8,14 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@class ManagerView,ServiceView;
+@class ManagerView,DepartmentView,EmployeeView;
 
 @interface View : NSObject
 
--(void)login;
+
 -(void)menu;
+/*
+    创建ManagerView类的单例对象
+ */
 +(ManagerView*)viewOfManager;
-+(ServiceView*)viewOfService;
+/*
+    创建DepartmentView类的单例对象
+ */
++(DepartmentView*)viewOfDepartment;
+/*
+    创建EmployeeView类的单例对象
+ */
++(EmployeeView*)viewOfEmployee;
 
 @end
 

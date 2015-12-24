@@ -7,16 +7,16 @@
 //
 #import "View.h"
 #import "ManagerView.h"
-#import "ServiceView.h"
+#import "DepartmentView.h"
+#import "EmployeeView.h"
 @implementation View
 -(void)menu
 {
     
 }
--(void)login
-{
-    
-}
+/*
+    创建ManagerView类的单例对象
+ */
 +(ManagerView*)viewOfManager
 {
     static ManagerView * mv = nil;
@@ -26,14 +26,29 @@
     }
     return mv;
 }
-+(ServiceView*)viewOfService
+/*
+    创建DepartmentView类的单例对象
+ */
++(DepartmentView *)viewOfDepartment
 {
-    static ServiceView * sv = nil;
-    if(sv == nil)
+    static DepartmentView * dv = nil;
+    if(dv == nil)
     {
-        sv = [[ServiceView alloc] init];
+        dv = [[DepartmentView alloc] init];
     }
-    return sv;
+    return dv;
+}
+/*
+    创建EmployeeView类的单例对象
+ */
++(EmployeeView*)viewOfEmployee
+{
+    static EmployeeView * ev = nil;
+    if(ev == nil)
+    {
+        ev = [[EmployeeView alloc] init];
+    }
+    return ev;
 }
 @end
 
