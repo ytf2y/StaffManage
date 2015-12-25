@@ -15,7 +15,7 @@
 
 @interface ManagerController ()
 //私有化的属性,用来存储多个管理员对象
-@property (nonatomic,strong) NSMutableArray * mArray;
+@property (nonatomic,strong) NSMutableArray * mManaArray;
 
 @end
 
@@ -31,16 +31,18 @@
         NSArray * array = [_dao readData];
         if(array == nil)
         {
-            _mArray = [[NSMutableArray alloc] init];
+            _mManaArray = [[NSMutableArray alloc] init];
         }
         else
         {
-            _mArray = [[NSMutableArray alloc] initWithArray:array];
+            _mManaArray = [[NSMutableArray alloc] initWithArray:array];
         }
         _mv = [View viewOfManager];
         _mv.mc = self;
+        _mv.dv = [View viewOfDepartment];
+        _mv.ev = [View viewOfEmployee];
+        
         _login = [Login defualtLogin];
-        _login.mc = self;
         
     }
     return self;
@@ -57,7 +59,7 @@
  */
 -(BOOL)checkName:(NSString *)name AndPassword:(NSString *)password
 {
-    for(ManagerModel * mm in _mArray)
+    for(ManagerModel * mm in _mManaArray)
     {
         if([name isEqualToString:mm.name] && [password isEqualToString:mm.password])
         {
@@ -71,11 +73,11 @@
  */
 -(BOOL)isManagerWithName:(NSString *)name
 {
-    for(NSUInteger i = 0;i < _mArray.count;i++)
+    for(NSUInteger i = 0;i < _mManaArray.count;i++)
     {
-        if([name isEqualToString:[_mArray[i] name]] == YES)
+        if([name isEqualToString:[_mManaArray[i] name]] == YES)
         {
-            return [_mArray[i] perm]?YES:NO;
+            return [_mManaArray[i] perm]?YES:NO;
         }
     }
     return NO;
@@ -103,28 +105,30 @@
     BOOL ret = [[Dao defaultDao] writeToInforFileWithDict:mDict];
     if(ret == NO)
     {
-        NSLog(@"写入数据到infor文件失败");
+        printf("写入数据到infor文件失败\n");
+    }
+    if([self searchManagerWithName:name])
+    {
+        return NO;
     }
     mm.name = name;
     mm.password = password;
     mm.perm = perm;
     
-    [self.mArray addObject:mm];
+    [self.mManaArray addObject:mm];
 //    printf("%s",[[mm description] UTF8String]);
     return YES;
 }
 /*
-    删除管理员,通过指定的管理员id
+    删除管理员,通过指定的管理员name
  */
--(BOOL)deleteManagerWithId:(NSUInteger)Id
+-(BOOL)deleteManagerWithName:(NSString *)name
 {
-    for(ManagerModel * mm in _mArray)
+    ManagerModel * mm = [self searchManagerWithName:name];
+    if(mm != nil)
     {
-        if(mm.Id == Id)
-        {
-            [_mArray removeObject:mm];
-            return YES;
-        }
+        [_mManaArray removeObject:mm];
+        return YES;
     }
     return NO;
 }
@@ -133,20 +137,30 @@
  */
 -(void)listManagers
 {
-//    printf("%ld\n",_mArray.count);
-    
-    
-    for(ManagerModel * mm in _mArray)
+    for(ManagerModel * mm in _mManaArray)
     {
-        printf("|%s|\n",[[mm description] UTF8String]);
+        printf("%s\n",[[mm description] UTF8String]);
     }
-   
 }
 /*
- 存储对象数据到文件
+    查找管理员,通过管理员用户名查找
+ */
+-(ManagerModel*)searchManagerWithName:(NSString *)name
+{
+    for(ManagerModel * mm in _mManaArray)
+    {
+        if([mm.name isEqualToString:name] == YES)
+        {
+            return mm;
+        }
+    }
+    return nil;
+}
+/*
+    存储对象数据到文件
  */
 -(void)writeData
 {
-    [_dao writeData:_mArray];
+    [_dao writeData:_mManaArray];
 }
 @end

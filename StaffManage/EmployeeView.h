@@ -8,7 +8,14 @@
 
 #import "View.h"
 
+@class EmployeeController;
+
 @interface EmployeeView : View
+
+//EmployeeController类的对象指针
+@property (nonatomic,strong) EmployeeController
+* ec;
+
 /*
     添加员工
  */

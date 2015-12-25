@@ -8,22 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class ManagerController,ManagerView,DepartmentView,EmployeeView;
+@class ManagerView,DepartmentView,EmployeeView;
 /*
     登陆类Login
     负责对用户登陆进行管理
  */
 @interface Login : NSObject
 
-//ManagerController类的对象指针.
-@property (nonatomic,strong) ManagerController * mc;
 
 //ManagerView类的对象指针
 @property (nonatomic,strong) ManagerView * mv;
 //DepartmentView类的对象指针
-@property (nonatomic,strong) DepartmentView * dv;
+//@property (nonatomic,strong) DepartmentView * dv;
 //EmployeeView类的对象指针
-@property (nonatomic,strong) EmployeeView * ev;
+//@property (nonatomic,strong) EmployeeView * ev;
 
 /*
     调用此方法,执行登陆

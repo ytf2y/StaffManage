@@ -7,10 +7,11 @@
 //
 
 #import "Login.h"
-#import "ManagerController.h"
 #import "ManagerView.h"
 #import "DepartmentView.h"
 #import "EmployeeView.h"
+#import "DepartmentController.h"
+#import "EmployeeController.h"
 
 @implementation Login
 /*
@@ -21,8 +22,11 @@
     if(self = [super init])
     {
         _mv = [View viewOfManager];
-        _dv = [View viewOfDepartment];
-        _ev = [View viewOfEmployee];
+        _mv.dc = [DepartmentController defaultDepartmentController];
+        _mv.ec = [EmployeeController defaultEmployeeController];
+        
+//        _dv = [View viewOfDepartment];
+//        _ev = [View viewOfEmployee];
     }
     return self;
 }
@@ -38,11 +42,11 @@
     printf("       请登陆\n");
     for(i = 1;i <= 3;i++)
     {
-        printf("用户名:");
+        printf("用户:");
         scanf("%s",name);
         printf("密码:");
         scanf("%s",password);
-        if([_mc checkName:[NSString stringWithUTF8String:name] AndPassword:[NSString stringWithUTF8String:password]] == YES)
+        if([_mv checkName:[NSString stringWithUTF8String:name] AndPassword:[NSString stringWithUTF8String:password]] == YES)
         {
             printf("登陆成功!\n");
             break;
@@ -63,27 +67,15 @@
     {
         while(1)
         {
-            if([_mc isManagerWithName:[NSString stringWithUTF8String:name]] == YES)
+            if([_mv isManagerWithName:[NSString stringWithUTF8String:name]] == YES)
             {
+                _mv.issupermanager = YES;
                 [self.mv menu];
             }
             else
             {
-                [self.dv menu];
-                [self.ev menu];
-                char xuanze[10] = {};
-                printf("请选择:");
-                scanf("%s",xuanze);
-                switch(atoi(xuanze))
-                {
-                    case 11:[self.dv add];break;
-                    case 12:[self.dv del];break;
-                    case 13:[self.dv list];break;
-                    case 21:[self.ev add];break;
-                    case 22:[self.ev del];break;
-                    case 23:[self.ev update];break;
-                    case 24:[self.ev list];break;
-                }
+                _mv.issupermanager = NO;
+                [self.mv operate];
             }
         }
     }

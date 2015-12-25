@@ -8,6 +8,9 @@
 
 #import "Dao.h"
 #import "ManagerDao.h"
+#import "DepartmentDao.h"
+#import "EmployeeDao.h"
+
 @implementation Dao
 /*
     读取项目信息文件(plist文件),返回存有数据的字典对象
@@ -63,7 +66,10 @@
     }
     return dao;
 }
-+(ManagerDao*)daoOfManager
+/*
+    创建并返回ManagerDao单例对象
+ */
++(Dao*)daoOfManager
 {
     static ManagerDao * mDao = nil;
     if(mDao == nil)
@@ -71,5 +77,29 @@
         mDao = [[ManagerDao alloc] init];
     }
     return mDao;
+}
+/*
+    创建并返回DepartmentDao单例对象
+ */
++(Dao*)daoOfDepartment
+{
+    static DepartmentDao * dDao = nil;
+    if(dDao == nil)
+    {
+        dDao = [[DepartmentDao alloc] init];
+    }
+    return dDao;
+}
+/*
+    创建并返回EmployeeDao单例对象
+ */
++(Dao*)daoOfEmployee
+{
+    static EmployeeDao * eDao = nil ;
+    if(eDao == nil)
+    {
+        eDao = [[EmployeeDao alloc] init];;
+    }
+    return eDao;
 }
 @end

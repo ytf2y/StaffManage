@@ -7,9 +7,12 @@
 //
 
 #import "ManagerView.h"
-#import "ManagerController.h"
 #import "EmployeeView.h"
 #import "DepartmentView.h"
+
+#import "ManagerController.h"
+#import "DepartmentController.h"
+#import "EmployeeController.h"
 
 @implementation ManagerView
 
@@ -34,9 +37,57 @@
         case 1:[self add];break;
         case 2:[self del];break;
         case 3:[self list];break;
-        case 4:break;
+        case 4:
+        {
+            while([self operate]);
+            
+            break;
+        }
         case 0:[self exit];break;
     }
+}
+/*
+    调用此方法,进入运营子系统
+    返回值,YES,没输入0
+          NO ,输入0
+ */
+-(BOOL)operate
+{
+    printf("********运营管理********\n");
+    [self.dv menu];
+    [self.ev menu];
+    printf(" |----其他业务\n");
+    if(self.issupermanager)
+    {
+        printf("   |--[0].返回上一级\n");
+    }
+    else
+    {
+        printf("   |--[0].退出系统\n");
+    }
+    printf("***********************\n");
+    char xuanze[10] = {};
+    printf("请选择:");
+    scanf("%s",xuanze);
+    switch(atoi(xuanze))
+    {
+        case 11:[self.dv addDept];break;
+        case 12:[self.dv delDept];break;
+        case 13:[self.dv listDept];break;
+        case 21:[self.ev add];break;
+        case 22:[self.ev del];break;
+        case 23:[self.ev update];break;
+        case 24:[self.ev list];break;
+    }
+    if(atoi(xuanze) == 0 && isalnum(xuanze[0]))
+    {
+        if(self.issupermanager == NO)
+        {
+            [self exit];
+        }
+        return NO;
+    }
+    return YES;
 }
 /*
     用户输入[1],调用此方法.
@@ -44,32 +95,28 @@
 -(void)add
 {
     char name[100] = {};
-    char password1[100] = {};
+    char password[100] = {};
     char type[10] = {};
-//    char password2[100] = {};
-    printf("请输入用户名(不能带有空格,中文)\n");
-    scanf("%s",name);
-//    while(1)
-//    {
-        printf("请输入密码(不能带有空格,中文)\n");
-        scanf("%s",password1);
-//        printf("请再次输入密码(不能带有空格)\n");
-//        scanf("%s",password2);
-//        if(strcmp(password1, password2))
-//        {
-//            printf("两次密码不一致,请重新输入!\n");
-//        }
-//        else
-//        {
-//            break;
-//        }
-//    }
-    printf("请选择管理员类型[1],超级管理员;[0],运营管理员\n");
-    scanf("%s",type);
-    BOOL ret = [_mc addManagerWithName:[NSString stringWithUTF8String:name] andPassword:[NSString stringWithUTF8String:password1] andPerm:atol(type)];
-    if(ret == YES)
+
+    while(1)
     {
-        printf("成功添加管理员.\n");
+        printf("请输入用户名(不能带有空格,中文)\n");
+        scanf("%s",name);
+        printf("请输入密码(不能带有空格,中文)\n");
+        scanf("%s",password);
+        
+        printf("请选择管理员类型[1],超级管理员;[0],运营管理员\n");
+        scanf("%s",type);
+        BOOL ret = [_mc addManagerWithName:[NSString stringWithUTF8String:name] andPassword:[NSString stringWithUTF8String:password] andPerm:atol(type)];
+        if(ret == YES)
+        {
+            printf("成功添加管理员.\n");
+            break;
+        }
+        else
+        {
+            printf("用户名重复,添加失败\n");
+        }
     }
 }
 /*
@@ -77,10 +124,10 @@
  */
 -(void)del
 {
-    char ID[10];
-    printf("请输入需要删除的管理员ID:");
+    char ID[100] = {};
+    printf("请输入需要删除的管理员:");
     scanf("%s",ID);
-    BOOL ret = [_mc deleteManagerWithId:atol(ID)];
+    BOOL ret = [_mc deleteManagerWithName:[NSString stringWithUTF8String:ID]];
     if(ret == YES)
     {
         printf("成功删除管理员[%s]\n",ID);
@@ -94,7 +141,7 @@
 //    printf("*********管理员列表*********\n");
 //    printf("|-------------------------|\n");
     printf("|--------管理员列表---------|\n");
-    printf("|ID   |USERNAME  |PASSWORD|\n");
+    printf("|ID  |UNAME  |PASSW |PERM |\n");
     printf("|-------------------------|\n");
     [_mc listManagers];
     printf("|-------------------------|\n");
@@ -105,6 +152,23 @@
 -(void)exit
 {
     [_mc writeData];
+    [_dc writeData];
+    [_ec writeData];
+    
     exit(0);
+}
+/*
+    验证用户名和密码是否正确.
+ */
+-(BOOL)checkName:(NSString *)name AndPassword:(NSString*)password
+{
+    return [_mc checkName:name AndPassword:password];
+}
+/*
+    验证是否是管理员
+ */
+-(BOOL)isManagerWithName:(NSString *)name
+{
+    return [_mc isManagerWithName:name];
 }
 @end

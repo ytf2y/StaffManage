@@ -13,8 +13,12 @@
 //部门ID
 @property (nonatomic,assign) NSUInteger deptId;
 //性别
-@property (nonatomic,assign) NSUInteger gender;
+@property (nonatomic,assign) BOOL gender;
 //年龄
 @property (nonatomic,assign) NSUInteger age;
 
 @end
+
+
+
+

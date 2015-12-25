@@ -8,18 +8,25 @@
 
 #import "View.h"
 
+@class DepartmentController;
+
 @interface DepartmentView : View
+
+//DepartmentController类的对象指针
+@property (nonatomic,strong) DepartmentController
+* dc;
+
 /*
     添加部门
  */
--(void)add;
+-(void)addDept;
 /*
     删除部门
  */
--(void)del;
+-(void)delDept;
 /*
     列出所有部门
  */
--(void)list;
+-(void)listDept;
 
 @end

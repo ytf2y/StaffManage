@@ -38,7 +38,7 @@
  */
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%-5ld|%-10s|%-4s|%-3ld",self.Id,[self.name UTF8String],"***",self.perm];
+    return [NSString stringWithFormat:@"|%-4ld|%-7s|%-6s|%-5ld|",self.Id,[self.name UTF8String],"***",self.perm];
 }
 
 @end

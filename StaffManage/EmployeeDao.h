@@ -10,4 +10,13 @@
 
 @interface EmployeeDao : Dao
 
+/*
+    读取数据文件(employee.archive文件),返回文件中的用户对象
+ */
+-(NSArray*)readData;
+/*
+    写入数据到文件(employee.archive文件)
+ */
+-(BOOL)writeData:(NSArray *)array;
+
 @end

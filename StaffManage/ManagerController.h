@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class ManagerView;
-@class ManagerDao;
+@class Dao;
 @class Login;
 
 @interface ManagerController : NSObject
 
 @property (nonatomic,strong) ManagerView * mv;
-@property (nonatomic,strong) ManagerDao * dao;
+@property (nonatomic,strong) Dao * dao;
 @property (nonatomic,strong) Login * login;
 
 /*
@@ -35,15 +35,15 @@
  */
 -(BOOL)addManagerWithName:(NSString *)name andPassword:(NSString *)password andPerm:(NSUInteger)perm;
 /*
-    删除管理员,通过指定的管理员id
+    删除管理员,通过指定的管理员name
  */
--(BOOL)deleteManagerWithId:(NSUInteger)Id;
+-(BOOL)deleteManagerWithName:(NSString *)name;
 /*
     列出所有管理员
  */
 -(void)listManagers;
 /*
-    存储对象数据到文件
+    存储Manager对象数据到文件
  */
 -(void)writeData;
 @end

@@ -10,4 +10,13 @@
 
 @interface DepartmentDao : Dao
 
+/*
+    读取数据文件(department.archive文件),返回文件中的用户对象
+ */
+-(NSArray*)readData;
+/*
+    写入数据到文件(department.archive文件)
+ */
+-(BOOL)writeData:(NSArray *)array;
+
 @end

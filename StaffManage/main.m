@@ -19,7 +19,8 @@ int main(int argc, const char * argv[])
         
 //        [mc listManagers];
         [mc viewDidLoad];
-//        [mc listManagers];
+        
+
         
 
         
